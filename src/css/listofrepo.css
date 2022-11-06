@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+h1 {
+  text-align: center;
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+  margin-bottom: 40px;
+}
+
+/* body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.box {
+  display: flex;
+  padding: 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.rainbow {
+  position: relative;
+  z-index: 0;
+  flex: 0 1 24%;
+  /* width: 300px; */
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5rem;
+  margin: 15px;
+  text-align: center;
+  font-size: 23px;
+}
+.rainbow::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #399953;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#399953, #399953),
+    linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33),
+    linear-gradient(#377af5, #377af5);
+  animation: rotate 4s linear infinite;
+}
+
+.rainbow::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 5px;
+}
+
+div.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+}
+.pagination {
+  margin: 25px 0 15px 0;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pagination li,
+button.next,
+button.prev {
+  margin-right: 5px;
+  list-style-type: none;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  background-color: #eee;
+  padding: 10px;
+  width: 40px;
+  border-radius: 12px;
+}
+.pagination button.next,
+button.prev {
+  width: 70px;
+}
+
+@media screen and (max-width: 430px) {
+  .pagination li,
+  button.next,
+  button.prev {
+    width: 30px;
+    padding: 5px;
+  }
+  .pagination button.next,
+  button.prev {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .pagination li,
+  button.next,
+  button.prev {
+    width: 25px;
+    padding: 3px;
+  }
+  .pagination button.next,
+  button.prev {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 325px) {
+  .pagination li,
+  button.next,
+  button.prev {
+    width: 20px;
+    padding: 3px;
+  }
+  .pagination button.next,
+  button.prev {
+    width: 35px;
+  }
+}
